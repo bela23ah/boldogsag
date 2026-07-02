@@ -49,7 +49,7 @@
       text-align: center;
     }
     .card.roni { border-top: 3px solid #D4537E; }
-    .card.baba { border-top: 3px solid #1D9E75; }
+    .card.geri  { border-top: 3px solid #4A90D9; }
 
     .card-icon { font-size: 28px; margin-bottom: 0.5rem; }
     .card-name {
@@ -82,7 +82,7 @@
       margin-bottom: 0.2rem;
     }
     .roni .big-num { color: #D4537E; }
-    .baba .big-num { color: #1D9E75; }
+    .geri .big-num  { color: #4A90D9; }
 
     .unit {
       font-size: 12px;
@@ -109,52 +109,10 @@
       line-height: 1.3;
     }
 
-    .baba-badge {
-      display: inline-block;
-      font-size: 11px;
-      background: #E1F5EE;
-      color: #0F6E56;
-      border-radius: 20px;
-      padding: 3px 10px;
-      margin-bottom: 0.8rem;
-      letter-spacing: 0.04em;
-    }
-
     .divider {
       border: none;
       border-top: 0.5px solid #d3d1c7;
       margin: 1.5rem 0;
-    }
-
-    .countdown-wrap { text-align: center; margin-bottom: 1.5rem; }
-    .countdown-label {
-      font-size: 12px;
-      color: #888780;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.75rem;
-    }
-    .countdown-row { display: flex; gap: 12px; justify-content: center; }
-    .cd-box {
-      background: #f1efe8;
-      border-radius: 8px;
-      padding: 12px 16px;
-      min-width: 64px;
-      text-align: center;
-    }
-    .cd-box .n {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 400;
-      color: #1D9E75;
-      line-height: 1;
-    }
-    .cd-box .u {
-      font-size: 10px;
-      color: #b4b2a9;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 2px;
     }
 
     .footer {
@@ -163,6 +121,7 @@
       border: 0.5px solid #d3d1c7;
       padding: 1.25rem;
       text-align: center;
+      margin-bottom: 1rem;
     }
     .footer-label {
       font-size: 11px;
@@ -173,7 +132,7 @@
     }
     .footer-grid {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -181,32 +140,30 @@
       background: #fff;
       border: 0.5px solid #d3d1c7;
       border-radius: 8px;
-      padding: 8px 12px;
+      padding: 8px 8px;
       text-align: center;
       flex: 1;
-      min-width: 80px;
+      min-width: 62px;
     }
     .footer-pill .fn {
       font-family: 'Playfair Display', serif;
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 400;
-      color: #D4537E;
       line-height: 1.2;
     }
+    .footer-pill .fn.pink { color: #D4537E; }
+    .footer-pill .fn.blue { color: #4A90D9; }
     .footer-pill .fu {
-      font-size: 10px;
+      font-size: 9px;
       color: #b4b2a9;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       margin-top: 2px;
     }
 
     @media (max-width: 480px) {
       .cards { grid-template-columns: 1fr; }
       .big-num { font-size: 28px; }
-      .countdown-row { gap: 8px; }
-      .cd-box { min-width: 52px; padding: 10px 10px; }
-      .cd-box .n { font-size: 22px; }
     }
   </style>
 </head>
@@ -218,8 +175,9 @@
     </div>
 
     <div class="cards">
+      <!-- RONI -->
       <div class="card roni">
-        <div class="card-icon">👧</div>
+        <div class="card-icon">&#128103;</div>
         <div class="card-name">Roni</div>
         <div class="card-date">2022. augusztus 1.</div>
         <div class="since">boldogít minket</div>
@@ -230,114 +188,147 @@
           <div class="pill"><span id="roni-m">—</span>hónap</div>
           <div class="pill"><span id="roni-d">—</span>nap</div>
         </div>
-        <div class="row" style="margin-top: 8px;">
+        <div class="row" style="margin-top:8px">
           <div class="pill"><span id="roni-h">—</span>óra</div>
           <div class="pill"><span id="roni-min">—</span>perc</div>
           <div class="pill"><span id="roni-s">—</span>mp</div>
         </div>
       </div>
 
-      <div class="card baba">
-        <div class="card-icon">🤰</div>
-        <div class="card-name">Baba</div>
-        <div class="card-date">várva várt érkezés</div>
-        <div class="baba-badge">hamarosan érkezik</div>
-        <div class="since">még</div>
-        <div class="big-num" id="baba-days">—</div>
-        <div class="unit" id="baba-unit">nap múlva</div>
+      <!-- GERI -->
+      <div class="card geri">
+        <div class="card-icon">&#128102;</div>
+        <div class="card-name">Geri</div>
+        <div class="card-date">2026. május 30.</div>
+        <div class="since">boldogít minket</div>
+        <div class="big-num" id="geri-days">—</div>
+        <div class="unit">napja</div>
         <div class="row">
-          <div class="pill"><span id="baba-h">—</span>óra</div>
-          <div class="pill"><span id="baba-min">—</span>perc</div>
-          <div class="pill"><span id="baba-s">—</span>mp</div>
+          <div class="pill"><span id="geri-y">—</span>év</div>
+          <div class="pill"><span id="geri-m">—</span>hónap</div>
+          <div class="pill"><span id="geri-d">—</span>nap</div>
+        </div>
+        <div class="row" style="margin-top:8px">
+          <div class="pill"><span id="geri-h">—</span>óra</div>
+          <div class="pill"><span id="geri-min">—</span>perc</div>
+          <div class="pill"><span id="geri-s">—</span>mp</div>
         </div>
       </div>
     </div>
 
     <hr class="divider">
 
-    <div class="countdown-wrap">
-      <div class="countdown-label">visszaszámlálás a baba érkezéséig</div>
-      <div class="countdown-row">
-        <div class="cd-box"><div class="n" id="cd-d">—</div><div class="u">nap</div></div>
-        <div class="cd-box"><div class="n" id="cd-h">—</div><div class="u">óra</div></div>
-        <div class="cd-box"><div class="n" id="cd-m">—</div><div class="u">perc</div></div>
-        <div class="cd-box"><div class="n" id="cd-s">—</div><div class="u">mp</div></div>
-      </div>
-    </div>
-
-    <hr class="divider">
-
+    <!-- Roni lábléc -->
     <div class="footer">
       <div class="footer-label">Roni összesen ennyi ideje része az életünknek</div>
       <div class="footer-grid">
-        <div class="footer-pill"><div class="fn" id="f-weeks">—</div><div class="fu">hét</div></div>
-        <div class="footer-pill"><div class="fn" id="f-days">—</div><div class="fu">nap</div></div>
-        <div class="footer-pill"><div class="fn" id="f-hours">—</div><div class="fu">óra</div></div>
-        <div class="footer-pill"><div class="fn" id="f-mins">—</div><div class="fu">perc</div></div>
-        <div class="footer-pill"><div class="fn" id="f-secs">—</div><div class="fu">másodperc</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-years">—</div><div class="fu">év</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-months">—</div><div class="fu">hónap</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-tdays">—</div><div class="fu">nap</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-weeks">—</div><div class="fu">hét</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-hours">—</div><div class="fu">óra</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-mins">—</div><div class="fu">perc</div></div>
+        <div class="footer-pill"><div class="fn pink" id="r-secs">—</div><div class="fu">mp</div></div>
       </div>
     </div>
+
+    <!-- Geri lábléc -->
+    <div class="footer">
+      <div class="footer-label">Geri összesen ennyi ideje része az életünknek</div>
+      <div class="footer-grid">
+        <div class="footer-pill"><div class="fn blue" id="g-years">—</div><div class="fu">év</div></div>
+        <div class="footer-pill"><div class="fn blue" id="g-months">—</div><div class="fu">hónap</div></div>
+        <div class="footer-pill"><div class="fn blue" id="g-tdays">—</div><div class="fu">nap</div></div>
+        <div class="footer-pill"><div class="fn blue" id="g-weeks">—</div><div class="fu">hét</div></div>
+        <div class="footer-pill"><div class="fn blue" id="g-hours">—</div><div class="fu">óra</div></div>
+        <div class="footer-pill"><div class="fn blue" id="g-mins">—</div><div class="fu">perc</div></div>
+        <div class="footer-pill"><div class="fn blue" id="g-secs">—</div><div class="fu">mp</div></div>
+      </div>
+    </div>
+
   </div>
 
   <script>
     const RONI = new Date(2022, 7, 1, 0, 10, 0);
-    const BABA = new Date(2026, 4, 23, 0, 0, 0);
+    const GERI = new Date(2026, 4, 30, 2, 23, 0);
 
     function pad(n) { return String(Math.floor(n)).padStart(2, '0'); }
 
+    // Pontos kor: hány teljes év, azon felül hány teljes hónap, azon felül hány nap
+    function calcAge(birth, now) {
+      let y = now.getFullYear() - birth.getFullYear();
+      let mo = now.getMonth() - birth.getMonth();
+      let d = now.getDate() - birth.getDate();
+
+      // ha a nap negatív, visszalépünk egy hónapot
+      if (d < 0) {
+        mo--;
+        // az előző hónap utolsó napja
+        d += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+      }
+      // ha a hónap negatív, visszalépünk egy évet
+      if (mo < 0) {
+        y--;
+        mo += 12;
+      }
+      return { y, mo, d };
+    }
+
+    function calcTotals(diff) {
+      const totalSecs   = Math.floor(diff / 1000);
+      const totalMins   = Math.floor(totalSecs / 60);
+      const totalHours  = Math.floor(totalMins / 60);
+      const totalDays   = Math.floor(diff / 86400000);
+      const totalWeeks  = Math.floor(totalDays / 7);
+      const totalMonths = Math.floor(totalDays / 30.4375);
+      const totalYears  = Math.floor(totalDays / 365.25);
+      return { totalSecs, totalMins, totalHours, totalDays, totalWeeks, totalMonths, totalYears };
+    }
+
+    function setChild(prefix, birth, now) {
+      const diff = now - birth;
+      const p = prefix[0]; // 'r' or 'g'
+
+      const dash = () => {
+        ['days','y','m','d','h','min','s'].forEach(id =>
+          document.getElementById(prefix + '-' + id).textContent = '—'
+        );
+        [p+'-years',p+'-months',p+'-tdays',p+'-weeks',p+'-hours',p+'-mins',p+'-secs']
+          .forEach(id => document.getElementById(id).textContent = '—');
+      };
+
+      if (diff < 0) { dash(); return; }
+
+      const age = calcAge(birth, now);
+      const tot = calcTotals(diff);
+
+      const h   = Math.floor((diff % 86400000) / 3600000);
+      const min = Math.floor((diff % 3600000)  / 60000);
+      const s   = Math.floor((diff % 60000)    / 1000);
+
+      // kártya
+      document.getElementById(prefix + '-days').textContent = tot.totalDays.toLocaleString('hu-HU');
+      document.getElementById(prefix + '-y').textContent    = age.y;
+      document.getElementById(prefix + '-m').textContent    = age.mo;
+      document.getElementById(prefix + '-d').textContent    = age.d;
+      document.getElementById(prefix + '-h').textContent    = pad(h);
+      document.getElementById(prefix + '-min').textContent  = pad(min);
+      document.getElementById(prefix + '-s').textContent    = pad(s);
+
+      // lábléc
+      document.getElementById(p + '-years').textContent  = tot.totalYears.toLocaleString('hu-HU');
+      document.getElementById(p + '-months').textContent = tot.totalMonths.toLocaleString('hu-HU');
+      document.getElementById(p + '-tdays').textContent  = tot.totalDays.toLocaleString('hu-HU');
+      document.getElementById(p + '-weeks').textContent  = tot.totalWeeks.toLocaleString('hu-HU');
+      document.getElementById(p + '-hours').textContent  = tot.totalHours.toLocaleString('hu-HU');
+      document.getElementById(p + '-mins').textContent   = tot.totalMins.toLocaleString('hu-HU');
+      document.getElementById(p + '-secs').textContent   = tot.totalSecs.toLocaleString('hu-HU');
+    }
+
     function update() {
       const now = new Date();
-
-      const rDiff = now - RONI;
-      const rTotalDays = Math.floor(rDiff / 86400000);
-      const rYears = Math.floor(rTotalDays / 365.25);
-      const rMonths = Math.floor(rTotalDays / 30.44);
-      const rDayOfMonth = Math.floor(rTotalDays % 30.44);
-      const rH = Math.floor((rDiff % 86400000) / 3600000);
-      const rMin = Math.floor((rDiff % 3600000) / 60000);
-      const rS = Math.floor((rDiff % 60000) / 1000);
-
-      document.getElementById('roni-days').textContent = rTotalDays.toLocaleString('hu-HU');
-      document.getElementById('roni-y').textContent = rYears;
-      document.getElementById('roni-m').textContent = rMonths;
-      document.getElementById('roni-d').textContent = rDayOfMonth;
-      document.getElementById('roni-h').textContent = pad(rH);
-      document.getElementById('roni-min').textContent = pad(rMin);
-      document.getElementById('roni-s').textContent = pad(rS);
-
-      const rTotalSecs = Math.floor(rDiff / 1000);
-      const rTotalMins = Math.floor(rTotalSecs / 60);
-      const rTotalHours = Math.floor(rTotalMins / 60);
-      const rTotalWeeks = Math.floor(rTotalDays / 7);
-
-      document.getElementById('f-weeks').textContent = rTotalWeeks.toLocaleString('hu-HU');
-      document.getElementById('f-days').textContent = rTotalDays.toLocaleString('hu-HU');
-      document.getElementById('f-hours').textContent = rTotalHours.toLocaleString('hu-HU');
-      document.getElementById('f-mins').textContent = rTotalMins.toLocaleString('hu-HU');
-      document.getElementById('f-secs').textContent = rTotalSecs.toLocaleString('hu-HU');
-
-      const bDiff = BABA - now;
-      const bDays = Math.floor(bDiff / 86400000);
-      const bH = Math.floor((bDiff % 86400000) / 3600000);
-      const bMin = Math.floor((bDiff % 3600000) / 60000);
-      const bS = Math.floor((bDiff % 60000) / 1000);
-
-      if (bDiff > 0) {
-        document.getElementById('baba-days').textContent = bDays;
-        document.getElementById('baba-h').textContent = pad(bH);
-        document.getElementById('baba-min').textContent = pad(bMin);
-        document.getElementById('baba-s').textContent = pad(bS);
-        document.getElementById('cd-d').textContent = bDays;
-        document.getElementById('cd-h').textContent = pad(bH);
-        document.getElementById('cd-m').textContent = pad(bMin);
-        document.getElementById('cd-s').textContent = pad(bS);
-      } else {
-        document.getElementById('baba-days').textContent = '🎉';
-        document.getElementById('baba-unit').textContent = 'megérkezett!';
-        document.getElementById('baba-h').textContent = '00';
-        document.getElementById('baba-min').textContent = '00';
-        document.getElementById('baba-s').textContent = '00';
-      }
+      setChild('roni', RONI, now);
+      setChild('geri', GERI, now);
     }
 
     update();
